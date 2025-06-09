@@ -8,10 +8,11 @@
   <style>
     :root {
       --primary: #4f46e5;
-      --secondary: #111827;
+      --secondary: #1e293b;
       --accent: #06b6d4;
-      --bg: #f0f4f8;
-      --text: #1e293b;
+      --bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
     }
 
     * {
@@ -25,22 +26,23 @@
       background-color: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     header {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem 2rem;
       text-align: center;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #e0f2fe;
     }
 
@@ -49,27 +51,27 @@
       margin: 2rem auto;
       max-width: 1000px;
       position: relative;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
     }
 
     .carousel-track {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.6s ease-in-out;
       width: 300%;
     }
 
     .carousel img {
       width: 100%;
-      height: 400px;
+      height: 350px;
       object-fit: cover;
+      filter: brightness(0.95);
     }
 
     main {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 2rem 1rem;
-      animation: fadeIn 1s ease-out;
+      animation: fadeIn 0.8s ease-out;
     }
 
     @keyframes fadeIn {
@@ -78,7 +80,7 @@
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 600;
       color: var(--primary);
       margin-bottom: 1rem;
@@ -87,15 +89,21 @@
     .intro p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
+      color: var(--muted);
+    }
+
+    .services ul {
+      list-style: none;
+      padding-left: 0;
     }
 
     .services li {
       background: white;
-      padding: 1.2rem;
+      padding: 1rem 1.5rem;
       margin-bottom: 1rem;
-      border-left: 5px solid var(--primary);
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
     .contact a.btn {
@@ -115,10 +123,11 @@
 
     footer {
       background: var(--secondary);
-      color: #e5e7eb;
+      color: #cbd5e1;
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -126,50 +135,55 @@
 
   <header>
     <h1>WebCommerce Studio</h1>
-    <p>Votre partenaire digital pour une présence en ligne qui cartonne</p>
+    <p>Conception de solutions e-commerce modernes, efficaces et sécurisées</p>
   </header>
 
   <div class="carousel">
     <div class="carousel-track" id="carousel-track">
-      <img src="https://source.unsplash.com/1000x400/?ecommerce" alt="Image 1">
-      <img src="https://source.unsplash.com/1000x400/?web" alt="Image 2">
-      <img src="https://source.unsplash.com/1000x400/?startup" alt="Image 3">
+      <img src="https://source.unsplash.com/1000x350/?online-store,interface" alt="Boutique en ligne">
+      <img src="https://source.unsplash.com/1000x350/?coding,developer" alt="Code moderne">
+      <img src="https://source.unsplash.com/1000x350/?checkout,website" alt="Expérience utilisateur">
     </div>
   </div>
 
   <main>
     <section class="intro">
-      <h2 class="section-title">À propos</h2>
+      <h2 class="section-title">Qui sommes-nous ?</h2>
       <p>
-        WebCommerce Studio est une micro-entreprise lyonnaise fondée par Julien Mercier, un développeur freelance passionné par les nouvelles technologies.
-        Nous aidons les indépendants, commerçants et PME à créer des expériences en ligne qui attirent, convertissent et fidélisent.
+        WebCommerce Studio est une micro-entreprise fondée à Lyon par Julien Mercier, développeur freelance spécialisé dans les technologies web.
+        Notre mission est de permettre à chaque commerçant, entrepreneur ou petite entreprise d’accéder à une présence numérique professionnelle,
+        fluide et engageante.
+      </p>
+      <p>
+        Nous croyons qu’un site bien conçu n’est pas seulement esthétique : il convertit, fidélise et inspire confiance.
       </p>
     </section>
 
     <section class="services">
-      <h2 class="section-title">Nos services</h2>
+      <h2 class="section-title">Ce que nous proposons</h2>
       <ul>
-        <li>Création de boutiques en ligne performantes (WooCommerce, Shopify, Prestashop)</li>
-        <li>Développement de sites vitrines esthétiques & optimisés SEO</li>
-        <li>Hébergement cloud, mise à jour & support technique</li>
-        <li>Cybersécurité, sauvegarde et protection des données clients</li>
-        <li>Automatisations marketing : emails, CRM, rapports personnalisés</li>
+        <li><strong>Création de boutiques en ligne</strong> (WooCommerce, Shopify, Prestashop) : design responsive, tunnel de commande optimisé.</li>
+        <li><strong>Sites vitrines sur mesure</strong> : visibilité, rapidité, référencement naturel (SEO) performant.</li>
+        <li><strong>Hébergement & maintenance</strong> : sécurité renforcée, mises à jour automatiques, monitoring.</li>
+        <li><strong>Protection des données</strong> : gestion des accès, sauvegardes chiffrées, conformité RGPD.</li>
+        <li><strong>Automatisation</strong> : factures, emails, tableaux de bord de performance.</li>
       </ul>
     </section>
 
     <section class="contact">
-      <h2 class="section-title">Contactez-nous</h2>
+      <h2 class="section-title">Contact</h2>
       <p>
-        Vous avez un projet ou des questions ? Écrivons-nous et voyons ce qu'on peut faire ensemble !<br>
-        📧 <a href="mailto:WebCommerce.Studio@outlook.fr">WebCommerce.Studio@outlook.fr</a><br>
-        📍 Basé à Lyon, France
+        Un projet en tête ? Envie d'échanger ? Nous sommes à l'écoute. Écrivez-nous pour un devis gratuit ou une première prise de contact.
+        <br><br>
+        📧 Email : <a href="mailto:WebCommerce.Studio@outlook.fr">WebCommerce.Studio@outlook.fr</a><br>
+        📍 Localisé à Lyon, France
       </p>
-      <a href="mailto:WebCommerce.Studio@outlook.fr" class="btn">Discutons de votre projet</a>
+      <a href="mailto:WebCommerce.Studio@outlook.fr" class="btn">Écrivez-nous</a>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 WebCommerce Studio — Conception web jeune, moderne et sécurisée.
+    &copy; 2025 WebCommerce Studio — Sites e-commerce et vitrines, hébergement et sécurité, sur-mesure pour les entrepreneurs.
   </footer>
 
   <script>
