@@ -1,9 +1,11 @@
 
-
-let index = 0;
+    const track = document.getElementById('carousel-track');
+    let index = 0;
+    const slides = track.children.length;
+    
     setInterval(() => {
-      index = (index + 1) % 3;
-      document.getElementById('carousel-track').style.transform = `translateX(-${index * 100}%)`;
+      index = (index + 1) % slides;
+      track.style.transform = `translateX(-${index * 100}%)`;
     }, 4000);
 
     window.addEventListener('scroll', () => {
