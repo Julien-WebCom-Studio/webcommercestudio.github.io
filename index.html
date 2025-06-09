@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WebCommerce Studio</title>
   <meta name="description" content="WebCommerce Studio - Création de sites e-commerce et vitrines, sécurité, SEO et automatisations pour indépendants et PME.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #4f46e5;
@@ -22,11 +21,15 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
     nav {
@@ -42,6 +45,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
       list-style: none;
     }
 
@@ -58,17 +62,17 @@
     header {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
-      padding: 3rem 1rem;
       text-align: center;
+      padding: 3rem 1rem;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
     }
 
     header p {
+      font-size: 1.2rem;
       margin-top: 0.5rem;
-      font-size: 1.3rem;
       color: #e0f2fe;
     }
 
@@ -76,7 +80,6 @@
       overflow: hidden;
       margin: 2rem auto;
       max-width: 1000px;
-      position: relative;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
@@ -89,15 +92,15 @@
 
     .carousel img {
       width: 100%;
-      height: 400px;
+      height: 300px;
       object-fit: cover;
     }
 
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 2rem 1rem;
-      animation: fadeIn 1s ease-out;
+      padding: 3rem 1rem;
+      animation: fadeIn 0.8s ease-out;
     }
 
     @keyframes fadeIn {
@@ -109,51 +112,64 @@
       font-size: 2rem;
       font-weight: 600;
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .intro p {
       font-size: 1.1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
-    .services li {
+    .services li,
+    .project,
+    blockquote {
       background: white;
-      padding: 1.2rem;
-      margin-bottom: 1rem;
+      padding: 1.4rem;
+      margin-bottom: 1.5rem;
       border-left: 5px solid var(--primary);
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: transform 0.3s ease;
     }
 
-    .services li:hover {
-      transform: translateY(-5px);
+    .services li:hover,
+    .project:hover,
+    blockquote:hover {
+      transform: translateY(-6px);
     }
 
-    .portfolio .project {
-      flex: 1 1 300px;
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    .portfolio,
+    .testimonials {
+      margin-top: 3rem;
     }
 
-    .portfolio .project img {
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project img {
       width: 100%;
       border-radius: 6px;
     }
 
-    .portfolio .project h3 {
+    .project h3 {
       margin-top: 1rem;
+      font-size: 1.2rem;
     }
 
-    .testimonials blockquote {
-      background: white;
-      padding: 1rem;
+    blockquote {
       border-left: 5px solid var(--accent);
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    }
+
+    blockquote strong {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .contact {
+      margin-top: 4rem;
     }
 
     .contact a.btn,
@@ -177,12 +193,12 @@
 
     .contact input,
     .contact textarea {
-      padding: 0.6rem;
+      padding: 0.7rem;
       margin: 0.5rem 0;
       width: 100%;
       max-width: 400px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
     footer {
@@ -191,6 +207,20 @@
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .carousel img {
+        height: 200px;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -240,7 +270,7 @@
 
     <section class="portfolio" id="portfolio">
       <h2 class="section-title">Nos réalisations</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <div class="portfolio-grid">
         <div class="project">
           <img src="https://source.unsplash.com/400x200/?website" alt="Projet boutique bio">
           <h3>Boutique Bio & Local</h3>
@@ -257,7 +287,7 @@
     <section class="testimonials">
       <h2 class="section-title">Ils nous font confiance</h2>
       <blockquote>
-        “Julien a su écouter mes besoins et livrer un site qui dépasse mes attentes.”<br>
+        “Julien a su écouter mes besoins et livrer un site qui dépasse mes attentes.”
         <strong>— Sophie D., créatrice d’une marque artisanale</strong>
       </blockquote>
     </section>
@@ -265,7 +295,7 @@
     <section class="contact" id="contact">
       <h2 class="section-title">Contactez-nous</h2>
       <p>
-        Vous avez un projet ou des questions ? Écrivons-nous et voyons ce qu'on peut faire ensemble !<br>
+        Vous avez un projet ou des questions ? Écrivons-nous !<br>
         📧 <a href="mailto:WebCommerce.Studio@outlook.fr">WebCommerce.Studio@outlook.fr</a><br>
         📍 Basé à Lyon, France
       </p>
