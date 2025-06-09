@@ -13,6 +13,15 @@
       --accent: #06b6d4;
       --bg: #f0f4f8;
       --text: #1e293b;
+      --card-bg: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --card-bg: #1e293b;
+      }
     }
 
     * {
@@ -32,8 +41,25 @@
       line-height: 1.6;
     }
 
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #e0f2fe;
+    }
+
     nav {
-      background: white;
+      background: var(--card-bg);
       padding: 1rem;
       position: sticky;
       top: 0;
@@ -57,23 +83,6 @@
 
     nav ul li a:hover {
       color: var(--primary);
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    header h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #e0f2fe;
     }
 
     .carousel {
@@ -123,7 +132,7 @@
     .services li,
     .project,
     blockquote {
-      background: white;
+      background: var(--card-bg);
       padding: 1.4rem;
       margin-bottom: 1.5rem;
       border-left: 5px solid var(--primary);
@@ -136,11 +145,6 @@
     .project:hover,
     blockquote:hover {
       transform: translateY(-6px);
-    }
-
-    .portfolio,
-    .testimonials {
-      margin-top: 3rem;
     }
 
     .portfolio-grid {
@@ -166,10 +170,6 @@
     blockquote strong {
       display: block;
       margin-top: 0.5rem;
-    }
-
-    .contact {
-      margin-top: 4rem;
     }
 
     .contact a.btn,
@@ -199,6 +199,8 @@
       max-width: 400px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      background: var(--card-bg);
+      color: var(--text);
     }
 
     footer {
@@ -207,6 +209,26 @@
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
+    }
+
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+    }
+
+    #toTop:hover {
+      background: #0891b2;
     }
 
     @media (max-width: 600px) {
@@ -226,6 +248,11 @@
 </head>
 <body>
 
+  <header id="top">
+    <h1>WebCommerce Studio</h1>
+    <p>Votre partenaire digital pour une présence en ligne qui cartonne</p>
+  </header>
+
   <nav>
     <ul>
       <li><a href="#about">À propos</a></li>
@@ -235,15 +262,10 @@
     </ul>
   </nav>
 
-  <header>
-    <h1>WebCommerce Studio</h1>
-    <p>Votre partenaire digital pour une présence en ligne qui cartonne</p>
-  </header>
-
   <div class="carousel">
     <div class="carousel-track" id="carousel-track">
       <img src="https://source.unsplash.com/1000x400/?ecommerce" alt="Image ecommerce">
-      <img src="https://source.unsplash.com/1000x400/?web" alt="Image développement web">
+      <img src="https://source.unsplash.com/1000x400/?web" alt="Image web">
       <img src="https://source.unsplash.com/1000x400/?startup" alt="Image startup">
     </div>
   </div>
@@ -252,8 +274,7 @@
     <section class="intro" id="about">
       <h2 class="section-title">À propos</h2>
       <p>
-        WebCommerce Studio est une micro-entreprise lyonnaise fondée par Julien Mercier, un développeur freelance passionné par les nouvelles technologies.
-        Nous aidons les indépendants, commerçants et PME à créer des expériences en ligne qui attirent, convertissent et fidélisent.
+        WebCommerce Studio est une micro-entreprise lyonnaise fondée par Julien Mercier, développeur freelance passionné par les nouvelles technologies. Nous aidons les indépendants, commerçants et PME à créer des expériences en ligne qui attirent, convertissent et fidélisent.
       </p>
     </section>
 
@@ -313,12 +334,23 @@
     &copy; 2025 WebCommerce Studio — Conception web jeune, moderne et sécurisée.
   </footer>
 
+  <!-- Bouton scroll top -->
+  <button id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
   <script>
+    // Carousel animation
     let index = 0;
     setInterval(() => {
       index = (index + 1) % 3;
       document.getElementById('carousel-track').style.transform = `translateX(-${index * 100}%)`;
     }, 4000);
+
+    // Scroll to top button visibility
+    const toTopBtn = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTopBtn.style.display = window.scrollY > 400 ? "block" : "none";
+    });
   </script>
+
 </body>
 </html>
