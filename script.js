@@ -12,11 +12,15 @@ let index = 0;
       toTop.style.display = window.scrollY > 300 ? "block" : "none";
     });
 
-    // Dark mode toggle
-    const toggleBtn = document.getElementById("toggle-dark");
-    const body = document.body;
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      body.classList.toggle("light");
-      toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+    const darkToggle = document.getElementById('dark-toggle');
+    const backToTop = document.getElementById('back-to-top');
+    
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      // Change icon from moon to sun
+      if (document.body.classList.contains('dark-mode')) {
+        darkToggle.textContent = '☀️';
+      } else {
+        darkToggle.textContent = '🌙';
+      }
     });
