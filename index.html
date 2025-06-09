@@ -1,24 +1,36 @@
-<body class="light">
-  <header id="top">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebCommerce Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
     <h1>WebCommerce Studio</h1>
     <p>Votre partenaire digital pour une présence en ligne qui cartonne</p>
-    <button id="toggle-dark">🌙</button>
   </header>
 
-  <nav>
+  <nav class="navbar">
     <ul>
       <li><a href="#about">À propos</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#services">Nos services</a></li>
+      <li><a href="#projects">Nos réalisations</a></li>
+      <li><a href="#trust">Ils nous font confiance</a></li>
+      <li><a href="#contact">Contactez-nous</a></li>
+      <li><button id="dark-toggle">🌙</button></li>
     </ul>
   </nav>
 
   <div class="carousel">
     <div class="carousel-track" id="carousel-track">
-      <img src="https://source.unsplash.com/1000x400/?ecommerce" alt="Image ecommerce">
-      <img src="https://source.unsplash.com/1000x400/?web" alt="Image web">
-      <img src="https://source.unsplash.com/1000x400/?startup" alt="Image startup">
+      <img src="https://source.unsplash.com/1000x400/?ecommerce" alt="Image 1" />
+      <img src="https://source.unsplash.com/1000x400/?web" alt="Image 2" />
+      <img src="https://source.unsplash.com/1000x400/?startup" alt="Image 3" />
     </div>
   </div>
 
@@ -26,83 +38,57 @@
     <section class="intro" id="about">
       <h2 class="section-title">À propos</h2>
       <p>
-        WebCommerce Studio est une micro-entreprise lyonnaise fondée par Julien Mercier, développeur freelance passionné par les nouvelles technologies.
+        WebCommerce Studio est une micro-entreprise lyonnaise fondée par Julien Mercier, un développeur freelance passionné par les nouvelles technologies.
+        Nous aidons les indépendants, commerçants et PME à créer des expériences en ligne qui attirent, convertissent et fidélisent.
       </p>
     </section>
 
     <section class="services" id="services">
       <h2 class="section-title">Nos services</h2>
       <ul>
-        <li>Création de boutiques en ligne performantes</li>
-        <li>Développement de sites vitrines optimisés</li>
-        <li>Hébergement, support & sécurité</li>
-        <li>Automatisations marketing</li>
+        <li>Création de boutiques en ligne performantes (WooCommerce, Shopify, Prestashop)</li>
+        <li>Développement de sites vitrines esthétiques & optimisés SEO</li>
+        <li>Hébergement cloud, mise à jour & support technique</li>
+        <li>Cybersécurité, sauvegarde et protection des données clients</li>
+        <li>Automatisations marketing : emails, CRM, rapports personnalisés</li>
       </ul>
     </section>
 
-    <section class="portfolio" id="portfolio">
+    <section class="projects" id="projects">
       <h2 class="section-title">Nos réalisations</h2>
-      <div class="portfolio-grid">
-        <div class="project">
-          <img src="https://source.unsplash.com/400x200/?website" alt="Projet 1">
-          <h3>Boutique Bio</h3>
-          <p>Une boutique en ligne pour produits locaux et bio.</p>
-        </div>
-        <div class="project">
-          <img src="https://source.unsplash.com/400x200/?tech,website" alt="Projet 2">
-          <h3>Site Vitrine Expert</h3>
-          <p>Un site professionnel pour un cabinet d'expertise.</p>
-        </div>
-      </div>
+      <ul>
+        <li>Refonte e-commerce : MaisonDurable.fr</li>
+        <li>Site vitrine : CaféSolidaire.org</li>
+        <li>Landing page : FormAuto.io</li>
+      </ul>
     </section>
 
-    <section class="testimonials">
+    <section class="trust" id="trust">
       <h2 class="section-title">Ils nous font confiance</h2>
-      <blockquote>
-        “Julien a su écouter mes besoins et livrer un site qui dépasse mes attentes.”
-        <strong>— Sophie D.</strong>
-      </blockquote>
+      <ul>
+        <li>📦 LogistikPro</li>
+        <li>🧁 SweetFactory</li>
+        <li>🏥 Santé+</li>
+      </ul>
     </section>
 
     <section class="contact" id="contact">
-      <h2 class="section-title">Contact</h2>
-      <form>
-        <input type="text" placeholder="Votre nom" required>
-        <input type="email" placeholder="Votre email" required>
-        <textarea rows="5" placeholder="Votre message" required></textarea><br>
-        <button type="submit">Envoyer</button>
-      </form>
+      <h2 class="section-title">Contactez-nous</h2>
+      <p>
+        Vous avez un projet ou des questions ? Écrivons-nous et voyons ce qu'on peut faire ensemble !<br />
+        📧 <a href="mailto:WebCommerce.Studio@outlook.fr">WebCommerce.Studio@outlook.fr</a><br />
+        📍 Basé à Lyon, France
+      </p>
+      <a href="mailto:WebCommerce.Studio@outlook.fr" class="btn">Discutons de votre projet</a>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 WebCommerce Studio — Tous droits réservés.
+    &copy; 2025 WebCommerce Studio — Conception web jeune, moderne et sécurisée.
   </footer>
 
-  <button id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+  <button id="back-to-top">↑</button>
 
-  <script>
-    // Carousel
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 3;
-      document.getElementById('carousel-track').style.transform = `translateX(-${index * 100}%)`;
-    }, 4000);
-
-    // Bouton retour haut
-    const toTop = document.getElementById("toTop");
-    window.addEventListener("scroll", () => {
-      toTop.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-
-    // Dark mode toggle
-    const toggleBtn = document.getElementById("toggle-dark");
-    const body = document.body;
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      body.classList.toggle("light");
-      toggleBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
