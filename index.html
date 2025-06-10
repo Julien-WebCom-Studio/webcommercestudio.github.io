@@ -96,13 +96,19 @@
     <section class="contact" id="contact">
       <h2 class="section-title">Contact</h2>
       <form method="POST" action="/contact-handler">
-        <label for="name">Votre nom</label>
+        <div>
+          <label for="name">Votre nom</label>
+        </div>
         <input type="text" id="name" name="name" placeholder="Votre nom" required>
     
-        <label for="email">Votre email</label>
+        <div>
+          <label for="email">Votre email</label>
+        </div>
         <input type="email" id="email" name="email" placeholder="Votre email" required>
     
-        <label for="message">Votre message</label>
+        <div>
+          <label for="message">Votre message</label>
+        </div>
         <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea><br>
     
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
