@@ -23,6 +23,8 @@ darkToggle.addEventListener('click', () => {
   darkToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
+emailjs.init('Ctibs3-1u4Gygz28D');
+
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
   
