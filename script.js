@@ -23,9 +23,9 @@ backToTop.addEventListener('click', () => {
 });
 
 darkToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('dark');
   // Change icon from moon to sun
-  if (document.body.classList.contains('dark-mode')) {
+  if (document.body.classList.contains('dark')) {
     darkToggle.textContent = '☀️';
   } else {
     darkToggle.textContent = '🌙';
