@@ -11,11 +11,7 @@ setInterval(() => {
 }, 4000);
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = 'block';
-  } else {
-    backToTop.style.display = 'none';
-  }
+  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
 backToTop.addEventListener('click', () => {
@@ -24,31 +20,43 @@ backToTop.addEventListener('click', () => {
 
 darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  // Change icon from moon to sun
-  if (document.body.classList.contains('dark')) {
-    darkToggle.textContent = '☀️';
-  } else {
-    darkToggle.textContent = '🌙';
-  }
+  darkToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
-
+  
+  const form = event.target;
   const submitBtn = document.getElementById('submit-btn');
+  const successMsg = document.getElementById('success-message');
+  const errorMsg = document.getElementById('error-message');
+  const errorDetails = document.getElementById('error-details');
+  
+  successMsg.style.display = 'none';
+  errorMsg.style.display = 'none';
+  
+  // État du bouton pendant l'envoi
   submitBtn.disabled = true;
   submitBtn.textContent = 'Envoi en cours...';
   
-  emailjs.sendForm('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', this)
-    .then(function() {
-      document.getElementById('success-message').style.display = 'block';
-      document.getElementById('contact-form').reset();
-    }, function(error) {
-      document.getElementById('error-message').style.display = 'block';
-      console.error('Erreur:', error);
-    })
-    .finally(function() {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Envoyer';
-    });
+  try {
+    const response = await emailjs.sendForm(
+      'VOTRE_SERVICE_ID',  // Remplacez par votre vrai Service ID
+      'VOTRE_TEMPLATE_ID', // Remplacez par votre vrai Template ID
+      form
+    );
+    
+    // Succès
+    successMsg.style.display = 'block';
+    form.reset();
+  } catch (error) {
+    // Erreur
+    console.error('Erreur EmailJS:', error);
+    errorDetails.textContent = error.text || "Service temporairement indisponible";
+    errorMsg.style.display = 'block';
+  } finally {
+    // Réinitialiser le bouton
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Envoyer';
+  }
 });
