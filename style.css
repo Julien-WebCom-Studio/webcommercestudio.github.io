@@ -271,13 +271,6 @@
         right: 10px;
         padding: 0.2rem 0.5rem;
       }
-          
-      .contact-row {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 1rem;
-      }
       
       .contact-field {
         flex: 1;
@@ -301,8 +294,26 @@
         width: 100%;
         max-width: 500px;
       }
+      
+      .contact-row {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap; /* important pour le responsive */
+        margin-bottom: 1rem;
+      }
+      
       .contact-details {
-        width: 45%;
-        minimum-width: 200px;
+        flex: 1 1 250px; /* adaptatif et minimum 250px */
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .contact-message {
+        margin-bottom: 1rem;
+      }
+      
+      .contact-message textarea {
+        width: 100%;
+        max-width: 600px;
       }
     }
