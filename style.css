@@ -60,7 +60,7 @@
     header img {
       max-height: 200px;
       width: auto;
-      display: block;
+      position: center;
     }
 
     #toggle-dark {
