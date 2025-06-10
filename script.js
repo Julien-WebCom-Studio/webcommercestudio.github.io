@@ -1,25 +1,15 @@
+const track = document.getElementById('carousel-track');
 const backToTop = document.getElementById('toTop');
 const darkToggle = document.getElementById('toggle-dark');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const track = document.getElementById('carousel-track');
-  const slides = document.querySelectorAll('.carousel img');
-  const slideCount = slides.length;
-  let index = 0;
+let index = 0;
+const slides = track.children.length;
 
-  track.style.width = `${slideCount * 100}%`;
-  slides.forEach(slide => {
-    slide.style.width = `${100 / slideCount}%`;
-  });
+setInterval(() => {
+  index = (index + 1) % slides;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}, 4000);
 
-  const carouselInterval = setInterval(() => {
-    index = (index + 1) % slideCount;
-    updateCarousel();
-  }, 4000);
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${index * (100 / slideCount)}%)`;
-  }
 window.addEventListener('scroll', () => {
   backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
@@ -46,8 +36,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   
   successMsg.style.display = 'none';
   errorMsg.style.display = 'none';
-  
-  // État du bouton pendant l'envoi
+
   submitBtn.disabled = true;
   submitBtn.textContent = 'Envoi en cours...';
   
@@ -58,16 +47,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       form
     );
     
-    // Succès
     successMsg.style.display = 'block';
     form.reset();
   } catch (error) {
-    // Erreur
     console.error('Erreur EmailJS:', error);
     errorDetails.textContent = error.text || "Service temporairement indisponible";
     errorMsg.style.display = 'block';
   } finally {
-    // Réinitialiser le bouton
     submitBtn.disabled = false;
     submitBtn.textContent = 'Envoyer';
   }
