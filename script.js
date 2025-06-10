@@ -31,3 +31,24 @@ darkToggle.addEventListener('click', () => {
     darkToggle.textContent = '🌙';
   }
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Envoi en cours...';
+  
+  emailjs.sendForm('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', this)
+    .then(function() {
+      document.getElementById('success-message').style.display = 'block';
+      document.getElementById('contact-form').reset();
+    }, function(error) {
+      document.getElementById('error-message').style.display = 'block';
+      console.error('Erreur:', error);
+    })
+    .finally(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer';
+    });
+});
