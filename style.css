@@ -118,9 +118,11 @@
     }
 
     .carousel {
+      position: relative;
       overflow: hidden;
-      margin: 2rem auto;
+      width: 100%;
       max-width: 1000px;
+      margin: 2rem auto;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
@@ -128,13 +130,14 @@
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      width: 300%;
+      height: 300px;
     }
 
     .carousel img {
       width: 100%;
-      height: 300px;
+      height: 100%;
       object-fit: cover;
+      flex-shrink: 0;
     }
 
     main {
