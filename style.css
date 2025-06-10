@@ -58,7 +58,9 @@
     }
 
     header img {
-          height: 200px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     #toggle-dark {
