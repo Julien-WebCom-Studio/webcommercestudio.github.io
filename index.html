@@ -96,15 +96,18 @@
     <section class="contact" id="contact">
       <h2 class="section-title">Contact</h2>
       <form method="POST" action="/contact-handler">
-        <div>
-          <label for="name">Votre nom</label>
+        <div class="contact-details">
+          <div>
+            <label for="name">Votre nom</label>
+          </div>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
         </div>
-        <input type="text" id="name" name="name" placeholder="Votre nom" required>
-    
-        <div>
-          <label for="email">Votre email</label>
+        <div class="contact-details">
+          <div>
+            <label for="email">Votre email</label>
+          </div>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
         </div>
-        <input type="email" id="email" name="email" placeholder="Votre email" required>
     
         <div>
           <label for="message">Votre message</label>
