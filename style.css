@@ -125,12 +125,13 @@
       margin: 2rem auto;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      height: 300px;
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      height: 300px;
+      height: 100%;
     }
 
     .carousel img {
