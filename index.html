@@ -26,11 +26,6 @@
   <meta name="twitter:description" content="Création de sites e-commerce et vitrines, sécurité, SEO et automatisations.">
   <meta name="twitter:image" content="https://tonsite.com/pictures/og-image.png">
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("VOTRE_USER_ID_PUBLIC"); // Initialisez avec votre User ID
-    })();
-  </script>
 
 </head>
 <body class="light">
@@ -124,12 +119,12 @@
           <button type="submit" id="submit-btn">Envoyer</button>
         </div>
                 <!-- Dans la section contact, modifiez les messages de feedback -->
-        <div id="success-message" style="display: none; color: green; margin-top: 1rem;">
+        <div id="success-message" style="display: none; color: green; margin-top: 1rem;" style="success">
           Message envoyé avec succès!
         </div>
         
-        <div id="error-message" style="display: none; color: red; margin-top: 1rem;">
-          Une erreur s'est produite: <span id="error-details"></span>
+        <div id="error-message" style="display: none; color: red; margin-top: 1rem;" style="error">
+          Une erreur s'est produite
         </div>
       </form>
     </section>
