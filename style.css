@@ -263,4 +263,25 @@
         right: 10px;
         padding: 0.2rem 0.5rem;
       }
+          
+      .contact form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .contact-row {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      
+      .contact-field {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .contact textarea {
+        resize: vertical;
+      }
     }
