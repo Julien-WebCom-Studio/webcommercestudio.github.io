@@ -237,8 +237,8 @@
     }
 
     footer {
-      background: var(--bg-dark);
-      color: #e5e7eb;
+      background: var(--card-bg);
+      color: var(--text);
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 4rem;
