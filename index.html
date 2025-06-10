@@ -25,6 +25,12 @@
   <meta name="twitter:title" content="WebCommerce Studio">
   <meta name="twitter:description" content="Création de sites e-commerce et vitrines, sécurité, SEO et automatisations.">
   <meta name="twitter:image" content="https://tonsite.com/pictures/og-image.png">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("VOTRE_USER_ID_PUBLIC"); // Initialisez avec votre User ID
+    })();
+  </script>
 
 </head>
 <body class="light">
@@ -94,28 +100,35 @@
 
     <section class="contact" id="contact">
       <h2 class="section-title">Contact</h2>
-      <form method="POST" action="/contact-handler">
+      <form id="contact-form">
         <div class="contact-details">
           <div>
             <label for="name">Votre nom</label>
           </div>
           <input type="text" id="name" name="name" placeholder="Votre nom" required>
         </div>
+        
         <div class="contact-details">
           <div>
             <label for="email">Votre email</label>
           </div>
           <input type="email" id="email" name="email" placeholder="Votre email" required>
         </div>
-    
+      
         <div>
           <label for="message">Votre message</label>
         </div>
-        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea><br>
-    
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-    
-        <button type="submit">Envoyer</button>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+      
+        <button type="submit" id="submit-btn">Envoyer</button>
+        
+        <div id="success-message" style="display: none;">
+          Message envoyé avec succès!
+        </div>
+        
+        <div id="error-message" style="display: none;">
+          Une erreur s'est produite, veuillez réessayer.
+        </div>
       </form>
     </section>
   </main>
