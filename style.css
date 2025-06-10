@@ -56,8 +56,9 @@
       margin-top: 0.5rem;
       color: #e0f2fe;
     }
+
     header img {
-          height: 60px;
+          height: 240px;
     }
 
     #toggle-dark {
