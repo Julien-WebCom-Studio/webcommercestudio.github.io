@@ -272,11 +272,6 @@
         padding: 0.2rem 0.5rem;
       }
           
-      .contact form {
-        display: flex;
-        flex-direction: column;
-      }
-      
       .contact-row {
         display: flex;
         gap: 1rem;
@@ -289,7 +284,21 @@
         min-width: 250px;
       }
       
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .contact label {
+        font-weight: 500;
+        margin-top: 1rem;
+      }
+
+      .contact input,
       .contact textarea {
-        resize: vertical;
+        width: 100%;
+        max-width: 500px;
       }
     }
