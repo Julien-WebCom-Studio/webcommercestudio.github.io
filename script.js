@@ -1,15 +1,25 @@
-const track = document.getElementById('carousel-track');
 const backToTop = document.getElementById('toTop');
 const darkToggle = document.getElementById('toggle-dark');
 
-let index = 0;
-const slides = track.children.length;
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('carousel-track');
+  const slides = document.querySelectorAll('.carousel img');
+  const slideCount = slides.length;
+  let index = 0;
 
-setInterval(() => {
-  index = (index + 1) % slides;
-  track.style.transform = `translateX(-${index * 100}%)`;
-}, 4000);
+  track.style.width = `${slideCount * 100}%`;
+  slides.forEach(slide => {
+    slide.style.width = `${100 / slideCount}%`;
+  });
 
+  const carouselInterval = setInterval(() => {
+    index = (index + 1) % slideCount;
+    updateCarousel();
+  }, 4000);
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * (100 / slideCount)}%)`;
+  }
 window.addEventListener('scroll', () => {
   backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
