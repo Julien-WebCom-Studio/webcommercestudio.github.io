@@ -21,5 +21,5 @@ Vous y trouverez :
 ## 🛡️ Licence
 
 Ce projet est soumis à une licence **propriétaire**.  
-**Tous droits réservés © 2025 Julien WebCom Studio**.  
+**Tous droits réservés © 2025 Julien WebCommerce Studio**.  
 La reproduction, modification ou réutilisation du contenu de ce dépôt sans autorisation est strictement interdite.
