@@ -43,7 +43,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   try {
     const response = await emailjs.sendForm(
       'service_1klhp6a',
-      'template_teow4jo', // Remplacez par votre vrai Template ID
+      'template_teow4jo',
       form
     );
     
